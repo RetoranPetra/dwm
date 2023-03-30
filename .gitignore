@@ -1,0 +1,5 @@
+# Just ignore patches.
+dwm
+*.o
+*.diff
+patches
