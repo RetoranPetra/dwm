@@ -58,7 +58,7 @@
 #define TAGMASK                 ((1 << LENGTH(tags)) - 1)
 #define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)
 //See if just ignoring it all together will let it compile.
-#define blw 1
+#define blw 0
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
