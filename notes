@@ -1,0 +1,6 @@
+Working fine graphically, but awesome-bar not taking into account extra length added by getsystraywidth. Button click is off roughly by the number of tray icons. (I think)
+
+But should probably test how it is effected with nothing in tray.
+
+
+Ok just checked, it's still about the same amount off despite changing systray. Systray is fine, it's off for some other reason.

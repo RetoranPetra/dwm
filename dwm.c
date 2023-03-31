@@ -58,7 +58,7 @@
 #define TAGMASK                 ((1 << LENGTH(tags)) - 1)
 #define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)
 //See if just ignoring it all together will let it compile.
-#define blw 0
+#define blw TEXTW(selmon->ltsymbol)
 
 #define SYSTEM_TRAY_REQUEST_DOCK    0
 /* XEMBED messages */
