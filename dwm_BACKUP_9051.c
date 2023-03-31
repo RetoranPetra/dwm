@@ -195,9 +195,9 @@ static void expose(XEvent *e);
 static void focus(Client *c);
 static void focusin(XEvent *e);
 static void focusmon(const Arg *arg);
-static void focusstack(int inc, int vis);
 static void focusstackvis(const Arg *arg);
 static void focusstackhid(const Arg *arg);
+static void focusstack(int inc, int vis);
 static Atom getatomprop(Client *c, Atom prop);
 static int getrootptr(int *x, int *y);
 static long getstate(Window w);
@@ -308,8 +308,12 @@ static void (*handler[LASTEvent]) (XEvent *) = {
 	[ResizeRequest] = resizerequest,
 	[UnmapNotify] = unmapnotify
 };
-static Atom wmatom[WMLast], netatom[NetLast], xatom[XLast];
+<<<<<<< HEAD
+static Atom wmatom[WMLast], netatom[NetLast];
 static int restart = 0;
+=======
+static Atom wmatom[WMLast], netatom[NetLast], xatom[XLast];
+>>>>>>> systray
 static int running = 1;
 static Cur *cursor[CurLast];
 static Clr **scheme;
@@ -491,8 +495,12 @@ buttonpress(XEvent *e)
 			arg.ui = 1 << i;
 		} else if (ev->x < x + TEXTW(selmon->ltsymbol))
 			click = ClkLtSymbol;
+<<<<<<< HEAD
 		/* 2px right padding */
-		else if (ev->x > selmon->ww - (int)TEXTW(stext) - getsystraywidth() + lrpad -2)
+		else if (ev->x > selmon->ww - TEXTW(stext) + lrpad - 2)
+=======
+		else if (ev->x > selmon->ww - (int)TEXTW(stext) - getsystraywidth())
+>>>>>>> systray
 			click = ClkStatusText;
 		else {
 			x += blw;
@@ -824,7 +832,11 @@ dirtomon(int dir)
 void
 drawbar(Monitor *m)
 {
-	int x, w, tw = 0, n = 0, scm, stw=0;
+<<<<<<< HEAD
+	int x, w, tw = 0, n = 0, scm;
+=======
+	int x, w, tw = 0, stw = 0;
+>>>>>>> systray
 	int boxs = drw->fonts->h / 9;
 	int boxw = drw->fonts->h / 6 + 2;
 	unsigned int i, occ = 0, urg = 0;
@@ -904,9 +916,13 @@ drawbar(Monitor *m)
 			drw_rect(drw, x, 0, w, bh, 1, 1);
 		}
 	}
+<<<<<<< HEAD
 	m->bt = n;
 	m->btw = w;
+	drw_map(drw, m->barwin, 0, 0, m->ww, bh);
+=======
 	drw_map(drw, m->barwin, 0, 0, m->ww - stw, bh);
+>>>>>>> systray
 }
 
 void
