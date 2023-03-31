@@ -866,8 +866,7 @@ drawbar(Monitor *m)
 	drw_setscheme(drw, scheme[SchemeNorm]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
-<<<<<<< HEAD
-	if ((w = m->ww - tw - x) > bh) {
+	if ((w = m->ww - tw - stw - x) > bh) {
 		if (n > 0) {
 			int remainder = w % n;
 			int tabw = (1.0 / (double)n) * w + 1;
@@ -891,6 +890,9 @@ drawbar(Monitor *m)
 				drw_text(drw, x, 0, tabw, bh, lrpad / 2, c->name, 0);
 				x += tabw;
 			}
+/*
+//Leftover systray stuff, assumed to be unneeded as awesome replaces
+//that functionality. only added stw, assumed to be system tray width.
 =======
 	if ((w = m->ww - tw - stw - x) > bh) {
 		if (m->sel) {
@@ -899,6 +901,7 @@ drawbar(Monitor *m)
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
 >>>>>>> systray
+*/
 		} else {
 			drw_setscheme(drw, scheme[SchemeNorm]);
 			drw_rect(drw, x, 0, w, bh, 1, 1);
