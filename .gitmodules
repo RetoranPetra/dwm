@@ -1,0 +1,6 @@
+[submodule "avd"]
+	path = avd
+	url = https://gitlab.com/narvin/avd
+[submodule "spoon"]
+	path = spoon
+	url = git://git.2f30.org/spoon
