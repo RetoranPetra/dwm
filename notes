@@ -1,6 +1,1 @@
-Working fine graphically, but awesome-bar not taking into account extra length added by getsystraywidth. Button click is off roughly by the number of tray icons. (I think)
-
-But should probably test how it is effected with nothing in tray.
-
-
-Ok just checked, it's still about the same amount off despite changing systray. Systray is fine, it's off for some other reason.
+Seems to be a 2 pixel ish deviation between the window tabs. the one at the end near status is what causes the error, as the awesomewm stuff is defined as an "else", and does not cover the extra cases.
