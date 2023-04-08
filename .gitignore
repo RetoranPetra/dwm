@@ -3,4 +3,4 @@ dwm
 *.o
 *.diff
 patches
-.cache
+.cache/**
