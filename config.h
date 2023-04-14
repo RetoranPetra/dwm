@@ -78,6 +78,11 @@ static const Key keys[] = {
 //Want a MODKEY version of this that scrolls between workspaces.
 	{ ALTKEY,                       XK_Tab,      focusstackvis,  {.i = +1 } },
 	{ ALTKEY|ShiftMask,             XK_Tab,      focusstackvis,  {.i = -1 } },
+//Scrolls between workspaces
+  { MODKEY,                       XK_Tab,      viewtoright,      {0}       },
+  { MODKEY|ShiftMask,             XK_Tab,      viewtoleft,     {0}       },
+  { MODKEY|ControlMask,           XK_Tab,      tagtoright,      {0}       },
+  { MODKEY|ControlMask|ShiftMask, XK_Tab,      viewtoleft,     {0}       },
 //{ MODKEY|ShiftMask,             XK_j,      focusstackhid,  {.i = +1 } },
 //{ MODKEY|ShiftMask,             XK_k,      focusstackhid,  {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -85,7 +90,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
+//{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 //Need to test swap out with own layouts thing that cycles through layouts.
   { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
