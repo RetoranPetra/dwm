@@ -496,7 +496,7 @@ buttonpress(XEvent *e)
 		} else if (ev->x < x + TEXTW(selmon->ltsymbol))
 			click = ClkLtSymbol;
 		/* 2px right padding */
-		else if (ev->x > selmon->ww - (int)TEXTW(stext) - getsystraywidth() + lrpad -2)
+		else if (ev->x > selmon->ww - (int)TEXTW(stext) - getsystraywidth()) //Safe version, real size has < + lrpad/2 extra. Not sure if due to lrpad not being set correctly, or due to it being innacurate.
 			click = ClkStatusText;
 		else {
 			x += blw;
