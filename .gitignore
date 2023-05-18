@@ -4,3 +4,4 @@ dwm
 *.diff
 patches
 .cache/**
+compile_commands.json
