@@ -73,8 +73,8 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_space,  togglebar,      {0} },
+	{ MODKEY,             XK_q, spawn,               {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_q, spawn,               {.v = termcmd } },
 //Want a MODKEY version of this that scrolls between workspaces.
 	{ ALTKEY,                       XK_Tab,      focusstackvis,  {.i = +1 } },
 	{ ALTKEY|ShiftMask,             XK_Tab,      focusstackvis,  {.i = -1 } },
@@ -91,14 +91,14 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 //{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ MODKEY,             XK_c,      killclient,     {0} },
 //Need to test swap out with own layouts thing that cycles through layouts.
-  { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-  { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+//{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 //{ MODKEY,                       XK_f,      setlayout,      {0} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
 //{ MODKEY,                       XK_space,  setlayout,      {0} },
-//{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+  { MODKEY,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_z,  		 hide,      		 {0} },
 	{ MODKEY|ShiftMask,             XK_z,  		 showall, 			 {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -119,8 +119,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
+	{ MODKEY|ShiftMask,             XK_m,      quit,           {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_m,      quit,           {1} }, 
 };
 
 /* button definitions */
